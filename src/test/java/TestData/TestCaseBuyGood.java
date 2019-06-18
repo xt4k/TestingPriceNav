@@ -1,7 +1,5 @@
 package TestData;
 
-import org.testng.annotations.DataProvider;
-
 public class TestCaseBuyGood {
     private String siteUrl;
     private String searchSelector;
@@ -34,33 +32,25 @@ public class TestCaseBuyGood {
         return basketEmptyTextSelector;
     }
 
-
     public String getBasketEmptyText() {
         return basketEmptyText;
     }
-
 
     public String getBasketGoodsDeleteSelector() {
         return basketGoodsDeleteSelector;
     }
 
-
     public String getBasketGoodsIncrementSelector() {
         return basketGoodsIncrementSelector;
     }
-
 
     public String getBasketGoodsDecrementSelector() {
         return basketGoodsDecrementSelector;
     }
 
-
-
     public String getFinalGoodNameContent() {
         return finalGoodNameContent;
     }
-
-
 
     public String getFinalGoodName() {
         return finalGoodName;
@@ -70,22 +60,17 @@ public class TestCaseBuyGood {
         return selectedColorState;
     }
 
-
     public String getSiteUrl() {
         return siteUrl;
     }
-
 
     public String getSearchSelector() {
         return searchSelector;
     }
 
-
     public String getSearchString() {
         return searchString;
     }
-
-
 
     public String getDropLineSelector() {
         return dropLineSelector;
@@ -95,16 +80,13 @@ public class TestCaseBuyGood {
         return extpectedDropLine;
     }
 
-
     public String getColourListboxFilterSelector() {
         return colourListboxFilterSelector;
     }
 
-
     public String getFirstColourSelector() {
         return firstColourSelector;
     }
-
 
     public String getSecondColourSelector() {
         return secondColourSelector;
@@ -114,16 +96,13 @@ public class TestCaseBuyGood {
         return finalGoodSelector;
     }
 
-
     public String getAddToBasketSelector() {
         return addToBasketSelector;
     }
 
-
     public String getBasketSelector() {
         return basketSelector;
     }
-
 
     public String getBasketGoodsSelector() {
         return basketGoodsSelector;
@@ -136,10 +115,10 @@ public class TestCaseBuyGood {
         this.searchString = "iphone se";
         this.dropLineSelector = ".//*[@id=\"search\"]//a[contains(.,'Toto TPU')]";
         this.extpectedDropLine = "Toto TPU Case Anti-Shock Apple iPhone SE";
-        this.colourListboxFilterSelector = ".//strong[text()='Цвет']";//Колір']";
-        this.firstColourSelector = ".//strong[text()='Цвет']/../..//a[text()='Прозрачный']";//Колір_Прозорий']";
+        this.colourListboxFilterSelector = ".//strong[text()='Колір']";//Колір']";Цвет
+        this.firstColourSelector = ".//strong[text()='Колір']/../..//a[text()='Прозорий']";//Колір_Прозорий']";Цвет_Прозрачный
         this.selectedColorState = "active";
-        this.secondColourSelector = ".//strong[text()='Цвет']/../..//a[text()='Голубой']";//Колір_Блакитний']";
+        this.secondColourSelector = ".//strong[text()='Колір']/../..//a[text()='Блакитний']";//Колір_Блакитний']";Цвет_Голубой
         this.finalGoodSelector = ".//a[text()='Toto TPU Case Anti-Shock Apple iPhone SE Blue']";
         this.finalGoodName = ".//h1/span";
         this.finalGoodNameContent = "Toto TPU Case Anti-Shock Apple iPhone SE Blue";
@@ -150,7 +129,7 @@ public class TestCaseBuyGood {
         this.basketGoodsDecrementSelector = ".//input[contains(@name,'OrderItem_amount')]/../a[contains(.,'-')]";
         this.basketGoodsDeleteSelector = ".//td/a[contains(@class,'delete')]";
         this.basketEmptyTextSelector = ".//h2";
-        this.basketEmptyText = "Список покупок пустой";//Список покупок порожній";
+        this.basketEmptyText = "Список покупок порожній";//Список покупок порожній";Список покупок пустой
     }
 }
 

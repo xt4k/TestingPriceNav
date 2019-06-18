@@ -9,5 +9,8 @@
         <module name="TestingRozetkaTask" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TestingRozetkaTask" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
