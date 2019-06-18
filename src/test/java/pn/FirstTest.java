@@ -10,11 +10,6 @@ import page.MainPage;
 import java.util.concurrent.TimeUnit;
 
 public class FirstTest extends page.BaseTest {
-
-
-
-
-
     @Test
     public void mainScenario() {
         //selenium webdriver
@@ -65,7 +60,7 @@ public class FirstTest extends page.BaseTest {
        // WebElement colorState = driver.findElement( By.xpath( testCaseBuyGoods.getFirstColourSelector() + "/.." ) );
         //"active"
        // Assert.assertEquals( String.valueOf( colorState.getAttribute( "class" ) ), testCaseBuyGoods.getSelectedColorState() );
-        mainPage.checkWebElementTextEquals(driver.findElement(By.xpath(testCaseBuyGoods.getDropLineSelector())),testCaseBuyGoods.getSelectedColorState());
+        mainPage.checkWebElementClassTextEquals(driver.findElement(By.xpath(testCaseBuyGoods.getFirstColourSelector() + "/..")),testCaseBuyGoods.getSelectedColorState());
 
 
         //5) Change color to Second ("Space Gray")
@@ -75,14 +70,14 @@ public class FirstTest extends page.BaseTest {
        // WebElement colorState = driver.findElement( By.xpath( testCaseBuyGoods.getFirstColourSelector() + "/.." ) );
 
         //Assert.assertEquals( String.valueOf( colorState.getAttribute( "class" ) ), "" );        //".//strong[text()='Колір']/../..//a[text()='Блакитний']"
-        mainPage.checkWebElementTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getFirstColourSelector() + "/.." ) ),"");
+        mainPage.checkWebElementClassTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getFirstColourSelector() + "/.." ) ),"");
 
        // driver.findElement( By.xpath( testCaseBuyGoods.getSecondColourSelector() ) ).click();  // ".//strong[text()='Колір']/../..//a[text()='Блакитний']/.."
         mainPage.webElementClick(driver.findElement( By.xpath( testCaseBuyGoods.getSecondColourSelector() ) ));
         //String strLocator = (testCaseBuyGoods.getSecondColourSelector() + "/..");
         //WebElement colorState = driver.findElement( By.xpath( testCaseBuyGoods.getSecondColourSelector() + "/.." ) );
         //Assert.assertEquals( String.valueOf( colorState.getAttribute( "class" ) ), testCaseBuyGoods.getSelectedColorState() );
-        mainPage.checkWebElementTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getSecondColourSelector() + "/.." ) ),testCaseBuyGoods.getSelectedColorState());
+        mainPage.checkWebElementClassTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getSecondColourSelector() + "/.." ) ),testCaseBuyGoods.getSelectedColorState());
 
 
         // ".//a[text()='Toto TPU Case Anti-Shock Apple iPhone SE Blue']"
@@ -99,7 +94,7 @@ public class FirstTest extends page.BaseTest {
         //".//span/a[contains(.,'Покупки')]/span"
        // WebElement basketContent = driver.findElement( By.xpath( testCaseBuyGoods.getBasketSelector() ) );
        // Assert.assertEquals( String.valueOf( basketContent.getText() ), "" );
-        mainPage.checkWebElementTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getBasketSelector() ) ),"");
+        mainPage.checkWebElementContainText(driver.findElement( By.xpath( testCaseBuyGoods.getBasketSelector() ) ),"");
 
 
         // ".//div[1]/div[5]/a"
@@ -114,7 +109,7 @@ public class FirstTest extends page.BaseTest {
 
        // basketContent = driver.findElement( By.xpath( testCaseBuyGoods.getAddToBasketSelector() ) );
        // Assert.assertEquals( String.valueOf( basketContent.getText() ), "1" );
-        mainPage.checkWebElementTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getAddToBasketSelector() ) ),"1");
+        mainPage.checkWebElementContainText(driver.findElement( By.xpath( testCaseBuyGoods.getAddToBasketSelector() ) ),"1");
 
 
       //  driver.findElement( By.xpath( testCaseBuyGoods.getBasketSelector() ) ).click();
@@ -128,7 +123,7 @@ public class FirstTest extends page.BaseTest {
 
        // basketContent = driver.findElement( By.xpath( testCaseBuyGoods.getAddToBasketSelector() ) );
        // Assert.assertEquals( String.valueOf( basketContent.getText() ), "0" );
-        mainPage.checkWebElementTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getAddToBasketSelector() ) ),"0");
+        mainPage.checkWebElementContainText(driver.findElement( By.xpath( testCaseBuyGoods.getAddToBasketSelector() ) ),"0");
 
         mainPage.webElementClick( driver.findElement( By.xpath( testCaseBuyGoods.getBasketSelector() ) ));
         //driver.findElement( By.xpath( testCaseBuyGoods.getBasketSelector() ) ).click();
@@ -142,7 +137,7 @@ public class FirstTest extends page.BaseTest {
 
        // basketContent = driver.findElement( By.xpath( testCaseBuyGoods.getAddToBasketSelector() ) );
         //Assert.assertEquals( String.valueOf( basketContent.getText() ), "1" );
-        mainPage.checkWebElementTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getAddToBasketSelector() ) ),"1");
+        mainPage.checkWebElementContainText(driver.findElement( By.xpath( testCaseBuyGoods.getAddToBasketSelector() ) ),"1");
 
         //+7)  Check into basket
 
@@ -152,7 +147,7 @@ public class FirstTest extends page.BaseTest {
         // ".//input[contains(@name,'OrderItem_amount')]"
        // String actualBasketGoods = driver.findElement( By.xpath( testCaseBuyGoods.getBasketGoodsSelector() ) ).getAttribute( "value" );
        // Assert.assertEquals( actualBasketGoods, "1" );
-        mainPage.checkWebElementTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getBasketGoodsSelector() ) ),"1");
+        mainPage.checkWebElementValueTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getBasketGoodsSelector() ) ),"1");
 
         //".//input[contains(@name,'OrderItem_amount')]/../a[contains(.,'+')]"
        // driver.findElement( By.xpath( testCaseBuyGoods.getBasketGoodsIncrementSelector() ) ).click();
@@ -166,7 +161,7 @@ public class FirstTest extends page.BaseTest {
 
        // actualBasketGoods = driver.findElement( By.xpath( testCaseBuyGoods.getBasketGoodsSelector() ) ).getAttribute( "value" );
        // Assert.assertEquals( actualBasketGoods, "2" );
-        mainPage.checkWebElementTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getBasketGoodsSelector() ) ),"2");
+        mainPage.checkWebElementValueTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getBasketGoodsSelector() ) ),"2");
 
 
 // ".//input[contains(@name,'OrderItem_amount')]/../a[contains(.,'-')]"
@@ -181,7 +176,7 @@ public class FirstTest extends page.BaseTest {
 
         //actualBasketGoods = driver.findElement( By.xpath( testCaseBuyGoods.getBasketGoodsSelector() ) ).getAttribute( "value" );
        // Assert.assertEquals( actualBasketGoods, "1" );
-        mainPage.checkWebElementTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getBasketGoodsSelector() ) ),"1");
+        mainPage.checkWebElementValueTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getBasketGoodsSelector() ) ),"1");
 //".//td/a[contains(@class,'delete')]"
        // driver.findElement( By.xpath( testCaseBuyGoods.getBasketGoodsDeleteSelector() ) ).click();
         mainPage.webElementClick( driver.findElement( By.xpath( testCaseBuyGoods.getBasketGoodsDeleteSelector() ) ));
@@ -195,7 +190,7 @@ public class FirstTest extends page.BaseTest {
 //"Список покупок порожній"
       //  actualBasketGoods = driver.findElement( By.xpath( testCaseBuyGoods.getBasketEmptyTextSelector() ) ).getText();
        // Assert.assertEquals( actualBasketGoods, testCaseBuyGoods.getBasketEmptyText() );
-        mainPage.checkWebElementTextEquals(driver.findElement( By.xpath( testCaseBuyGoods.getBasketEmptyTextSelector() ) ),testCaseBuyGoods.getBasketEmptyText());
+        mainPage.checkWebElementContainText(driver.findElement( By.xpath( testCaseBuyGoods.getBasketEmptyTextSelector() ) ),testCaseBuyGoods.getBasketEmptyText());
 
         System.out.println( "pn-done" );
     }

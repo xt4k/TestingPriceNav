@@ -41,7 +41,7 @@ public class BasePage {
     public void checkWebElementContainText(WebElement element, String expectedText) {
         // String str = webElement.getText();
         //"Toto TPU Case Anti-Shock Apple iPhone SE"
-       // System.out.println(" text: "+expectedText+" el.text: "+element.getText());
+        System.out.println("check WE contains Text.| web-el.text: " + element.getText()+"| is contain | exp.text: " + expectedText+" |");
         Assert.assertTrue( element.getText() .contains(expectedText ) );
     }
 
@@ -51,7 +51,16 @@ public class BasePage {
     }
 
 
-    public void checkWebElementTextEquals(WebElement element, String expectedStr) {
+    public void checkWebElementClassTextEquals(WebElement element, String expectedStr) {
+        System.out.println("check WE Text Is Equal.| web-el.attr 'class:'" + String.valueOf( element.getAttribute("class" ))+"|=|"+"exp.text: " + expectedStr +" |");
         Assert.assertEquals( String.valueOf( element.getAttribute( "class" ) ), expectedStr );
     }
+
+    public void checkWebElementValueTextEquals(WebElement element, String expectedStr) {
+        System.out.println("check WE Text Is Equal.| web-el.attr 'value:'" + String.valueOf( element.getAttribute("value" ))+"|=|"+"exp.text: " + expectedStr +" |");
+        Assert.assertEquals( String.valueOf( element.getAttribute( "value" ) ), expectedStr );
+    }
+
+
+
 }
