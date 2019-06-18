@@ -2,11 +2,13 @@ package page;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.testng.annotations.*;
 
 import java.io.FileReader;
@@ -21,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.fail;
 
 public class BaseTest {
-    private static final Logger LOG = LogManager.getLogger( com.academy.framework.BaseTest.class);
+    private static final Logger LOG = LogManager.getLogger( BaseTest.class);
     protected WebDriver driver;
     protected StringBuffer verificationErrors = new StringBuffer();
 
@@ -56,12 +58,15 @@ public class BaseTest {
 //                prefs.put("intl.accept_languages", "en,en_US");
                 ChromeOptions options = new ChromeOptions();
                 options.setExperimentalOption("prefs", prefs);
+                options.addArguments("--lang=ua");
                 driver = new ChromeDriver(options);
                 break;
 
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", properties.getProperty("gecko.driver"));
-                driver = new FirefoxDriver();
+                //FirefoxProfile profile = new FirefoxProfile();
+                //profile.setPreference( "intl.accept_languages", "ua" );
+                driver = new FirefoxDriver();//(profile);
                 break;
 
             default:
