@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--Конфигурация для testNG фреймворка-->
+<suite name="Cross Browser  Suite">
+    <test name="pn First Test Chrome">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="pn.FirstTest" />
+        </classes>
+    </test>
+
+    <test name="pn First Test Firefox">
+        <parameter name="browser" value="firefox" />
+        <classes>
+            <class name="pn.FirstTest" />
+        </classes>
+    </test>
+</suite>
