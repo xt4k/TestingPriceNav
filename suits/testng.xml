@@ -7,14 +7,14 @@
         <parameter name="browser" value="chrome" />
         <classes>
             <class name="Tests.rozetka.NoBuyOnlyClickScenario" />
-            <!--class name="Tests.pn.FirstTest" /-->
-        </classes>
-    </test>
-
-    <!--test name="Tests.pn First Test Firefox">
-        <parameter name="browser" value="firefox" />
-        <classes>
             <class name="Tests.pn.FirstTest" />
         </classes>
-    </test-->
+    </test>
+    <test name="Tests.pn First Test Firefox">
+        <parameter name="browser" value="firefox" />
+        <classes>
+            <class name="Tests.rozetka.NoBuyOnlyClickScenario" />
+            <class name="Tests.pn.FirstTest" />
+        </classes>
+    </test>
 </suite>
