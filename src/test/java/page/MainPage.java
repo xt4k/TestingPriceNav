@@ -43,10 +43,10 @@ public class MainPage extends page.BasePage {
 
 
     public MainPage webElementClickWaitCheck(String locator1, String locator2, String expectedValue) {
-
         webElementClick( driver.findElement( By.xpath( locator1 ) ) );
         waitUntilTextChanged( locator2, driver.findElement( By.xpath(locator2 ) ).getText());
         checkWebElementContainText( driver.findElement( By.xpath(locator2 ) ), expectedValue);
+        System.out.println("locator1: "+ locator1 +"|  locator2: "+ locator2 +" | exp.text:"+ expectedValue );
         return this;
     }
 

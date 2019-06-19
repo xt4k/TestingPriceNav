@@ -140,9 +140,9 @@ public class RozetkaData {
         this.basketCandidateTitle ="Korg nanoKONTROL Studio (222888)";
         this.basketCandidateSelector=".//*[@id=\"cdk-overlay-39\"]//h2";//.//*[@id=\"cdk-overlay-39\"]//h2";
 
-        this.addToBasketSelector = ".//pp-photo-block/div[1]";
-        this.basketGoodsSelector = ".//*[@id=\"cdk-overlay-7\"]//rz-cart-button-simple/div";
-        this.basketGoodsActionTitle = "Ви додали товар у кошик";
+        this.addToBasketSelector = ".//rz-cart-button-simple//form";//.//*[@id=\"cdk-overlay-0\"]//span/span";//.//pp-photo-block/div[1]";
+        this.basketGoodsSelector = ".//*[@id=\"cdk-overlay-1\"]//h2";
+        this.basketGoodsActionTitle = "Вы добавили товар в корзину";//Ви додали товар у кошик";
 
         this.basketGoodsIncrementSelector = ".//button//rz-svg-sprite[contains(@icon,'plus')]";
         this.basketGoodsDecrementSelector = ".//button//rz-svg-sprite[contains(@icon,'minus')]";
