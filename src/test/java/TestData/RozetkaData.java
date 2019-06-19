@@ -144,8 +144,6 @@ public class RozetkaData {
         this.basketGoodsSelector = ".//*[@id=\"cdk-overlay-7\"]//rz-cart-button-simple/div";
         this.basketGoodsActionTitle = "Ви додали товар у кошик";
 
-
-
         this.basketGoodsIncrementSelector = ".//button//rz-svg-sprite[contains(@icon,'plus')]";
         this.basketGoodsDecrementSelector = ".//button//rz-svg-sprite[contains(@icon,'minus')]";
 
