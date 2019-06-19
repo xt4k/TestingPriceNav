@@ -110,25 +110,31 @@ public class TestCaseBuyGood {
 
 
     public TestCaseBuyGood() {
-        this.siteUrl = "https://pn.com.ua/";
+        this.siteUrl = "https://Tests.pn.com.ua/";
         this.searchSelector = ".//*[contains(@class,'search-text-input')]";
         this.searchString = "iphone se";
         this.dropLineSelector = ".//*[@id=\"search\"]//a[contains(.,'Toto TPU')]";
-        this.extpectedDropLine = "Toto TPU Case Anti-Shock Apple iPhone SE";
+        this.finalGoodNameContent =                                 "Toto TPU Case Anti-Shock Apple iPhone SE Blue";
+        this.extpectedDropLine =                                    "Toto TPU Case Anti-Shock Apple iPhone SE";
+        this.finalGoodSelector =                       ".//a[text()='Toto TPU Case Anti-Shock Apple iPhone SE Blue']";
+
         this.colourListboxFilterSelector = ".//strong[text()='Колір']";//Колір']";Цвет
-        this.firstColourSelector = ".//strong[text()='Колір']/../..//a[text()='Прозорий']";//Колір_Прозорий']";Цвет_Прозрачный
+        this.firstColourSelector =         ".//strong[text()='Колір']/../..//a[text()='Прозорий']";//Колір_Прозорий']";Цвет_Прозрачный
+        this.secondColourSelector =        ".//strong[text()='Колір']/../..//a[text()='Блакитний']";//Колір_Блакитний']";Цвет_Голубой
         this.selectedColorState = "active";
-        this.secondColourSelector = ".//strong[text()='Колір']/../..//a[text()='Блакитний']";//Колір_Блакитний']";Цвет_Голубой
-        this.finalGoodSelector = ".//a[text()='Toto TPU Case Anti-Shock Apple iPhone SE Blue']";
+
         this.finalGoodName = ".//h1/span";
-        this.finalGoodNameContent = "Toto TPU Case Anti-Shock Apple iPhone SE Blue";
+        this.basketEmptyTextSelector = ".//h2";
+
         this.addToBasketSelector = ".//span/a[contains(.,'Покупки')]/span";
         this.basketSelector = ".//div[1]/div[5]/a";
         this.basketGoodsSelector = ".//input[contains(@name,'OrderItem_amount')]";
+
         this.basketGoodsIncrementSelector = ".//input[contains(@name,'OrderItem_amount')]/../a[contains(.,'+')]";
         this.basketGoodsDecrementSelector = ".//input[contains(@name,'OrderItem_amount')]/../a[contains(.,'-')]";
+
         this.basketGoodsDeleteSelector = ".//td/a[contains(@class,'delete')]";
-        this.basketEmptyTextSelector = ".//h2";
+
         this.basketEmptyText = "Список покупок порожній";//Список покупок порожній";Список покупок пустой
     }
 }

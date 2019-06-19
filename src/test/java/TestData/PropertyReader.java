@@ -1,4 +1,4 @@
-package page;
+package TestData;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class PropertyReader {
 
     private PropertyReader() {}
 
-    private static page.PropertyReader getInstance() {
+    private static PropertyReader getInstance() {
         if (instance == null)
             instance = new PropertyReader();
 

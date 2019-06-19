@@ -3,17 +3,18 @@
 
 <!--Конфигурация для testNG фреймворка-->
 <suite name="Cross Browser  Suite">
-    <test name="pn First Test Chrome">
+    <test name="Tests.pn First Test Chrome">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="pn.FirstTest" />
+            <class name="Tests.rozetka.NoBuyOnlyClickScenario" />
+            <!--class name="Tests.pn.FirstTest" /-->
         </classes>
     </test>
 
-    <test name="pn First Test Firefox">
+    <!--test name="Tests.pn First Test Firefox">
         <parameter name="browser" value="firefox" />
         <classes>
-            <class name="pn.FirstTest" />
+            <class name="Tests.pn.FirstTest" />
         </classes>
-    </test>
+    </test-->
 </suite>

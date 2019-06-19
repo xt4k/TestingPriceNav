@@ -31,18 +31,16 @@ public class BasePage {
         textField.click();
     }
 
-    protected void waitUntilTextChanged(String locator, String oldMessage) {
+    public void waitUntilTextChanged(String locator, String oldMessage) {
         WebDriverWait webDriverWait = new WebDriverWait( driver, EXPLICITLY_WAIT_TIMEOUT );
 
         webDriverWait.until( ExpectedConditions.not(
                 ExpectedConditions.textToBe( By.cssSelector( locator ), oldMessage ) ) );
     }
 
-    public void checkWebElementContainText(WebElement element, String expectedText) {
-        // String str = webElement.getText();
-        //"Toto TPU Case Anti-Shock Apple iPhone SE"
-        System.out.println("check WE contains Text.| web-el.text: " + element.getText()+"| is contain | exp.text: " + expectedText+" |");
-        Assert.assertTrue( element.getText() .contains(expectedText ) );
+    public BasePage webElementXpathLocatorClick(String locator) {
+        driver.findElement( By.xpath( locator ) ).click();
+        return this;
     }
 
     public BasePage webElementClick(WebElement element) {
@@ -50,17 +48,27 @@ public class BasePage {
         return this;
     }
 
+    public void checkWebElementContainText(WebElement element, String expectedText) {
+        System.out.println("check WE contains Text.| web-el.text: " + element.getText()+"| is contain | exp.text: " + expectedText+" |");
+        Assert.assertTrue( element.getText().contains( expectedText ) );
+    }
 
     public void checkWebElementClassTextEquals(WebElement element, String expectedStr) {
-        System.out.println("check WE Text Is Equal.| web-el.attr 'class:'" + String.valueOf( element.getAttribute("class" ))+"|=|"+"exp.text: " + expectedStr +" |");
+        //System.out.println("check WE Text Is Equal.| web-el.attr 'class:'" + String.valueOf( element.getAttribute("class" ))+"|=|"+"exp.text: " + expectedStr +" |");
         Assert.assertEquals( String.valueOf( element.getAttribute( "class" ) ), expectedStr );
     }
 
     public void checkWebElementValueTextEquals(WebElement element, String expectedStr) {
-        System.out.println("check WE Text Is Equal.| web-el.attr 'value:'" + String.valueOf( element.getAttribute("value" ))+"|=|"+"exp.text: " + expectedStr +" |");
+        //System.out.println("check WE Text Is Equal.| web-el.attr 'value:'" + String.valueOf( element.getAttribute("value" ))+"|=|"+"exp.text: " + expectedStr +" |");
         Assert.assertEquals( String.valueOf( element.getAttribute( "value" ) ), expectedStr );
     }
 
+    public void checkWebElementCheckedTextEquals(WebElement element, String expectedStr) {
+       // System.out.println("webelement:"+element.toString());
+      //  System.out.println("webelement.attribute.'checked':"+element.getAttribute( "checked" ).toString());
+       // System.out.println("check WE Text Is Equal.| web-el.attr 'checked:'" + String.valueOf( element.getAttribute("checked" ))+"|=|"+"exp.text: " + expectedStr +" |");
+        Assert.assertEquals( String.valueOf( element.getAttribute( "checked" ) ), expectedStr );
+    }
 
 
 }
