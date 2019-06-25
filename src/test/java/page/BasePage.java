@@ -18,17 +18,17 @@ public class BasePage {
         PageFactory.initElements( driver, this );
     }
 
-    protected void enterText(WebElement textField, String value) {
-        textField.click();
-        textField.clear();
-        textField.sendKeys( value );
+    protected void enterText(WebElement webElementTextField, String value) {
+        webElementTextField.click();
+        webElementTextField.clear();
+        webElementTextField.sendKeys( value );
     }
 
-    protected void enterTextAndClick(WebElement textField, String value) {
-        textField.click();
-        textField.clear();
-        textField.sendKeys( value );
-        textField.click();
+    protected void enterTextAndClick(WebElement webElementTextField, String value) {
+        webElementTextField.click();
+        webElementTextField.clear();
+        webElementTextField.sendKeys( value );
+        webElementTextField.click();
     }
 
     public void waitUntilTextChanged(String locator, String oldMessage) {

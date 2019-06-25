@@ -15,7 +15,7 @@ public class MainPage extends page.BasePage {
     private final String searchStr = ".//*[contains(@class,'search-text-input')]";
 
     //    @FindBy(css = "body > app-root > div > div:nth-child(2) > div.app-rz-header > header > div > div.header-topline > div.header-topline__user.js-rz-auth > div.header-topline__user-wrapper > p > a")
-    @FindBy(css = enterLinkLocator)
+    @FindBy(xpath = ".//*[contains(@class,'user-info')]")
     private WebElement enterLink;
 
     @FindBy(xpath = searchStr)
@@ -23,6 +23,15 @@ public class MainPage extends page.BasePage {
 
     @FindBy(xpath = ".//*[@id=\"search\"]//a[contains(.,'Toto TPU')]")
     private WebElement webElement;
+
+    public AuthFormPage clickEnterLink() {
+        enterLink.click();
+        return new AuthFormPage( driver );
+    }
+
+    public String getEnterLinkText() {
+        return enterLink.getText().trim();    }
+
 
     public MainPage enterAndSearchSomeString(String stringForSearch) {
         System.out.println("string search: "+ stringForSearch);
@@ -38,9 +47,6 @@ public class MainPage extends page.BasePage {
         enterTextAndClick( driver.findElement( By.xpath( locator ) ), stringForSearch );
         return this;
     }
-
-
-
 
     public MainPage webElementClickWaitCheck(String locator1, String locator2, String expectedValue) {
         webElementClick( driver.findElement( By.xpath( locator1 ) ) );
@@ -79,18 +85,13 @@ public class MainPage extends page.BasePage {
         return this;
     }
 
-
-
-
     public MainPage(WebDriver driver) {
         super( driver );
     }
-
 
     public MainPage waitUntilLinkTextChanged(String oldMessage) {
         waitUntilTextChanged( enterLinkLocator, oldMessage );
         return this;
     }
-
 
 }
