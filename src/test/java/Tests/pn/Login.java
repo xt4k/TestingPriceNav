@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import page.AuthFormPage;
 import page.MainPage;
 
-public class LoginLogout extends BaseTest {
+public class Login extends BaseTest {
     @Test(dataProvider = "testSuccessAuthDataProvider")
     public void positiveScenario(String loginFromExcelFile, String passwordFromExcelFile, String userNameExpected) {
         // 0) open site
@@ -34,12 +34,16 @@ public class LoginLogout extends BaseTest {
 
         authFormPage.openLoginWindowPopup( true );
 
+
+
         authFormPage.enterLogin( loginFromExcelFile );
         authFormPage.enterPassword( passwordFromExcelFile );
         mainPage = (MainPage) authFormPage.submit( true );
 
         mainPage = mainPage.waitUntilLinkTextChanged( oldMessage );
         String userNameActual = mainPage.getEnterLinkText();
+        System.out.println("userNameActual: "+userNameActual);
+        System.out.println("userNameExpected: "+userNameExpected);
         Assert.assertEquals( userNameActual, userNameExpected );
     }
 

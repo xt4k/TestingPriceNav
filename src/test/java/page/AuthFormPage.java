@@ -6,16 +6,16 @@ import org.openqa.selenium.support.FindBy;
 
 public class AuthFormPage extends BasePage {
 
-    @FindBy(xpath="login-form-login")
+    @FindBy(id="login-form-login")
     WebElement loginField;
 
     @FindBy(xpath = ".//*[contains(@onclick,'showLoginForm()')]")
     WebElement openLoginWindow;
 
-    @FindBy(xpath="login-form-password")
+    @FindBy(id="login-form-password")
     WebElement passwordField;
 
-    @FindBy(xpath = "loginButton")
+    @FindBy(id = "loginButton")
     WebElement submitButton;
 
     public AuthFormPage(WebDriver driver) {

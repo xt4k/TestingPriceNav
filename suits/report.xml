@@ -2,8 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <!--Конфигурация для testNG фреймворка-->
-<suite name="Cross Browser  Suite">
-    <test name="Tests.pn First Test Chrome">
+<suite name="Report Suite" parallel="false">
+    <test name="Report Test">
         <parameter name="browser" value="chrome" />
         <classes>
             <class name="Tests.pn.Login" />
