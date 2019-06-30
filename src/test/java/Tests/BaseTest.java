@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.testng.annotations.*;
 
 import java.io.FileReader;
@@ -20,25 +21,26 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.fail;
 
 public class BaseTest {
-    private static final Logger LOG = LogManager.getLogger( BaseTest.class );
+    private static final Logger LOG = LogManager.getLogger(BaseTest.class );
     protected WebDriver driver;
     protected StringBuffer verificationErrors = new StringBuffer();
 
     @Parameters("browser")
     @BeforeClass(alwaysRun = true)
     public void setUp(@Optional("firefox") String browser) throws Exception {
+        System.out.println("LOG: " + LOG.toString());
         initDrivers( browser );
         driver.manage().timeouts().implicitlyWait( 5, TimeUnit.SECONDS );
         driver.manage().window().maximize();
-
         //System.out.println("!!old dimension is "+driver.manage().window().getSize().toString() );
         //driver.manage().window().setSize( new Dimension( 1050,630 )  );
         // System.out.println("!!current dimension is "+driver.manage().window().getSize().toString() );
     }
 
     private void initDrivers(String browser) {
-        // Здесь читаю пусть к файлу конфигурации
+        // Здесь читаю путь к файлу конфигурации
         String commonProperties = System.getProperty( "common.cfg" );
+        System.out.println("commonProperties: "+commonProperties);
         Properties properties = new Properties();
         try {
             properties.load( new FileReader( commonProperties ) );
@@ -61,8 +63,8 @@ public class BaseTest {
 
             case "firefox":
                 System.setProperty( "webdriver.gecko.driver", properties.getProperty( "gecko.driver" ) );
-                //FirefoxProfile profile = new FirefoxProfile();
-                //profile.setPreference( "intl.accept_languages", "ua" );
+                FirefoxProfile profile = new FirefoxProfile();
+                profile.setPreference( "intl.accept_languages", "ua" );
                 driver = new FirefoxDriver();//(profile);
                 break;
 

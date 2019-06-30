@@ -49,7 +49,7 @@ public class BasePage {
     }
 
     public void checkWebElementContainText(WebElement element, String expectedText) {
-        System.out.println("check WE contains Text.| web-el.text: " + element.getText()+"| is contain | exp.text: " + expectedText+" |");
+        //System.out.println("check WE contains Text.| web-el.text: " + element.getText()+"| is contain | exp.text: " + expectedText+" |");
         Assert.assertTrue( element.getText().contains( expectedText ) );
     }
 

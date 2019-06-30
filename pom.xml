@@ -14,6 +14,7 @@
         <!--Кодировка-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <common.config>${basedir}/src/main/resources/common.properties</common.config>
+        <log4j.configurationFile>${basedir}/src/main/resources/log4j2.properties</log4j.configurationFile>
 
 
         <poi.ooxml.version>4.0.1</poi.ooxml.version>
@@ -31,8 +32,8 @@
             <groupId>com.academy</groupId>
             <artifactId>taf</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
-        -Excel-->
+        </dependency-->
+        <!--Excel-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
@@ -64,7 +65,6 @@
             <artifactId>log4j-core</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-
 
         <!--Lib for XML-->
         <dependency>

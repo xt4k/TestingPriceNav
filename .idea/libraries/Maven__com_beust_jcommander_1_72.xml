@@ -1,13 +1,11 @@
 <component name="libraryTable">
   <library name="Maven: com.beust:jcommander:1.72">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/beust/jcommander/1.72/jcommander-1.72.jar!/" />
+      <root url="jar://$CLASSPATH$/taf/target/taf-1.0-SNAPSHOT.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/com/beust/jcommander/1.72/jcommander-1.72-javadoc.jar!/" />
-    </JAVADOC>
+    <JAVADOC />
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/beust/jcommander/1.72/jcommander-1.72-sources.jar!/" />
+      <root url="jar://$CLASSPATH$/taf/target/taf-1.0-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

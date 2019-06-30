@@ -34,7 +34,7 @@ public class MainPage extends page.BasePage {
 
 
     public MainPage enterAndSearchSomeString(String stringForSearch) {
-        System.out.println("string search: "+ stringForSearch);
+ //       System.out.println("string search: "+ stringForSearch);
 //        searchString.click();
 //        searchString.clear();
 //        searchString.sendKeys(login);
@@ -43,7 +43,7 @@ public class MainPage extends page.BasePage {
     }
 
     public MainPage enterSearchString(String stringForSearch, String locator) {
-        System.out.println("string search: "+ stringForSearch);
+ //       System.out.println("string search: "+ stringForSearch);
         enterTextAndClick( driver.findElement( By.xpath( locator ) ), stringForSearch );
         return this;
     }
@@ -52,7 +52,7 @@ public class MainPage extends page.BasePage {
         webElementClick( driver.findElement( By.xpath( locator1 ) ) );
         waitUntilTextChanged( locator2, driver.findElement( By.xpath(locator2 ) ).getText());
         checkWebElementContainText( driver.findElement( By.xpath(locator2 ) ), expectedValue);
-        System.out.println("locator1: "+ locator1 +"|  locator2: "+ locator2 +" | exp.text:"+ expectedValue );
+//        System.out.println("locator1: "+ locator1 +"|  locator2: "+ locator2 +" | exp.text:"+ expectedValue );
         return this;
     }
 

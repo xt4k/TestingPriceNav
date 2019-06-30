@@ -6,7 +6,8 @@
     <test name="Report Test">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="Tests.pn.Login" />
+            <class name="Tests.pn.CheckInterfaceSwitching" />
+            <!--class name="Tests.pn.Login" />
             <class name="Tests.pn.FirstTest" />
         </classes>
 
@@ -15,7 +16,7 @@
         <parameter name="browser" value="firefox" />
         <classes>
             <class name="Tests.pn.Login" />
-            <class name="Tests.pn.FirstTest" />
+            <class name="Tests.pn.FirstTest" /-->
         </classes>
     </test>
 
